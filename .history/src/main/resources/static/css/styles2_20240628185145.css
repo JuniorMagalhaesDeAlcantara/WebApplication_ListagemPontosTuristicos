@@ -23,8 +23,8 @@ body {
 }
 
 header {
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #007bff; /* Tom de azul mais escuro */
+    color: #fff;
     padding: 10px 0;
 }
 
@@ -49,7 +49,6 @@ header .container {
     font-weight: bold;
 }
 
-
 header nav ul {
     list-style: none;
     display: flex;
@@ -57,14 +56,14 @@ header nav ul {
 }
 
 header nav ul li a {
-    color: #333;
+    color: #fff;
     text-decoration: none;
     padding: 5px 10px;
     transition: background 0.3s;
 }
 
 header nav ul li a:hover {
-    background-color: #e0e0e0;
+    background-color: #0056b3;
 }
 
 main {
@@ -84,20 +83,15 @@ main {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.spot-form .form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-}
-
 .spot-form label {
-    font-weight: bold;
+    display: block;
     margin-bottom: 5px;
 }
 
 .spot-form input[type="text"],
 .spot-form textarea,
 .spot-form select {
+    width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
