@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Pontos Turísticos</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="/images/logo.png" alt="Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="/spots">Home</a></li>
+                    <li><a href="/new">Adicionar Ponto Turístico</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Lista de Pontos Turísticos</h1>
+
+            <form action="#" th:action="@{/spots}" method="get" class="search-form">
+                <label for="keyword">Buscar:</label>
+                <input type="text" id="keyword" name="keyword" th:value="${keyword}">
+                <button type="submit">Buscar</button>
+            </form>
+
+            <div th:if="${error}" class="error-message">
+                <p th:text="${error}"></p>
+            </div>
+
+            <div th:if="${spots.empty}">
+                <p>Nenhum ponto turístico encontrado.</p>
+            </div>
+
+            <div th:if="${not spots.empty}">
+                <ul class="spot-list">
+                    <li th:each="spot : ${spots.content}">
+                        <span th:text="${spot.name}"></span> - <span th:text="${spot.location}"></span>
+                    </li>
+                </ul>
+                <div class="pagination">
+                    <span>Mostrando página ${spots.number + 1} de ${spots.totalPages}</span>
+                    <div th:if="${spots.hasPrevious()}">
+                        <a th:href="@{${'/spots'}(page=${spots.number - 1}, size=${spots.size})}">Anterior</a>
+                    </div>
+                    <div th:if="${spots.hasNext()}">
+                        <a th:href="@{${'/spots'}(page=${spots.number + 1}, size=${spots.size})}">Próxima</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

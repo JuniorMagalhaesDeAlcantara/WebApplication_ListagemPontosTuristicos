@@ -1,0 +1,97 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+p {
+    color: #666;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+form label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+form input {
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #fff;
+    margin: 10px auto;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 80%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ul li span {
+    display: block;
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+div.pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+div.pagination a {
+    margin: 0 5px;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+}
+
+div.pagination a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin: 20px 0;
+}

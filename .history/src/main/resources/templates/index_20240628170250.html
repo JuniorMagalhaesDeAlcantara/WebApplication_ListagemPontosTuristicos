@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> <!-- Declaração do namespace Thymeleaf -->
+<head>
+    <title>Lista de Pontos Turísticos</title> <!-- Título da página -->
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/styles.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Responsividade -->
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="/images/logo.png" alt="Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/new">Adicionar Ponto Turístico</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Lista de Pontos Turísticos</h1> <!-- Título principal da página -->
+
+            <!-- Formulário para busca de pontos turísticos -->
+            <form action="/" method="get" class="search-form">
+                <input type="text" name="keyword" placeholder="Buscar..."> <!-- Campo de entrada para a palavra-chave de busca -->
+                <button type="submit">Buscar</button> <!-- Botão para submeter o formulário de busca -->
+            </form>
+
+            <!-- Tabela para exibir os pontos turísticos -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th> <!-- Cabeçalho da coluna Nome -->
+                        <th>Localização</th> <!-- Cabeçalho da coluna Localização -->
+                        <th>Ações</th> <!-- Cabeçalho da coluna Ações -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Iteração sobre a lista de pontos turísticos na página -->
+                    <tr th:each="spot : ${page.content}">
+                        <td th:text="${spot.name}"></td> <!-- Celula com o nome do ponto turístico -->
+                        <td th:text="${spot.location}"></td> <!-- Celula com a localização do ponto turístico -->
+                        <td><a th:href="@{/view/{id}(id=${spot.id})}">Detalhes</a></td> <!-- Link para detalhes do ponto turístico -->
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Navegação entre páginas -->
+            <div class="pagination">
+                <!-- Exibe o número da página atual e o total de páginas -->
+                <span th:text="'Página ' + ${page.number + 1} + ' de ' + ${page.totalPages}"></span>
+                
+                <!-- Link para a página anterior, visível se houver página anterior -->
+                <div th:if="${page.hasPrevious()}">
+                    <a th:href="@{/(page=${page.number - 1})}">Anterior</a>
+                </div>
+                
+                <!-- Link para a próxima página, visível se houver próxima página -->
+                <div th:if="${page.hasNext()}">
+                    <a th:href="@{/(page=${page.number + 1})}">Próximo</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
