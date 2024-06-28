@@ -12,15 +12,16 @@ import com.example.tourist_spot.model.TouristSpot;
 import com.example.tourist_spot.repository.TouristSpotRepository;
 
 @Service // Indica que esta classe é um serviço do Spring
-public class TouristSpotService {
 
+public class TouristSpotService {
     @Autowired // Injeta automaticamente a dependência do TouristSpotRepository
+    
     private TouristSpotRepository repository;
 
     // Método para listar todos os pontos turísticos, com suporte a busca por palavra-chave e paginação
     public Page<TouristSpot> listAll(String keyword, Pageable pageable) {
+         // Se a palavra-chave for fornecida, realiza uma busca pelos campos name, description ou location
         if (keyword != null) {
-            // Se a palavra-chave for fornecida, realiza uma busca pelos campos name, description ou location
             return repository.findByNameContainingOrDescriptionContainingOrLocationContaining(keyword, keyword, keyword, pageable);
         }
         // Caso contrário, retorna todos os pontos turísticos paginados

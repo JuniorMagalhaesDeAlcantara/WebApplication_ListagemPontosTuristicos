@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> <!-- Declaração do namespace Thymeleaf -->
+<head>
+    <title>Detalhes do Ponto Turístico</title> <!-- Título da página -->
+</head>
+<body>
+<h1>Detalhes do Ponto Turístico</h1> <!-- Título principal da página -->
+
+<!-- Exibição dos detalhes do ponto turístico -->
+<div>
+    <label>Nome:</label> <!-- Rótulo para o nome do ponto turístico -->
+    <span th:text="${spot.name}"></span> <!-- Exibe dinamicamente o nome do ponto turístico -->
+</div>
+<div>
+    <label>Descrição:</label> <!-- Rótulo para a descrição do ponto turístico -->
+    <span th:text="${spot.description}"></span> <!-- Exibe dinamicamente a descrição do ponto turístico -->
+</div>
+<div>
+    <label>Localização:</label> <!-- Rótulo para a localização do ponto turístico -->
+    <span th:text="${spot.location}"></span> <!-- Exibe dinamicamente a localização do ponto turístico -->
+</div>
+
+<a href="/">Voltar</a> <!-- Link para voltar à página inicial -->
+
+</body>
+</html>

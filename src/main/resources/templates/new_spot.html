@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> <!-- Declaração do namespace Thymeleaf -->
+<head>
+    <title>Novo Ponto Turístico</title> <!-- Título da página -->
+</head>
+<body>
+<h1>Novo Ponto Turístico</h1> <!-- Título principal da página -->
+
+<!-- Formulário para adicionar um novo ponto turístico -->
+<form action="/save" method="post">
+    <div>
+        <label for="name">Nome:</label> <!-- Rótulo para o campo de entrada do nome -->
+        <input type="text" id="name" name="name" required> <!-- Campo de entrada para o nome, obrigatório -->
+    </div>
+    <div>
+        <label for="description">Descrição:</label> <!-- Rótulo para o campo de entrada da descrição -->
+        <textarea id="description" name="description" maxlength="100" required></textarea> <!-- Campo de entrada para a descrição, obrigatório -->
+    </div>
+    <div>
+        <label for="location">Localização:</label> <!-- Rótulo para o campo de entrada da localização -->
+        <input type="text" id="location" name="location" required> <!-- Campo de entrada para a localização, obrigatório -->
+    </div>
+    <div>
+        <label for="city">Cidade:</label> <!-- Rótulo para o campo de entrada da cidade -->
+        <input type="text" id="city" name="city" required> <!-- Campo de entrada para a cidade, obrigatório -->
+    </div>
+    <div>
+        <label for="state">Estado:</label> <!-- Rótulo para o campo de seleção do estado -->
+        <select id="state" name="state" required> <!-- Campo de seleção para o estado, obrigatório -->
+            <!-- Iteração sobre a lista de estados, utilizando Thymeleaf -->
+            <option th:each="state : ${states}" th:text="${state}" th:value="${state}"></option>
+        </select>
+    </div>
+    <button type="submit">Salvar</button> <!-- Botão para submeter o formulário -->
+</form>
+
+<a href="/">Voltar</a> <!-- Link para voltar à página inicial -->
+
+</body>
+</html>
