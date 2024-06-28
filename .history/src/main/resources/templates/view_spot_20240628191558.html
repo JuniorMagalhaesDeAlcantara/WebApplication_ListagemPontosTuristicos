@@ -23,19 +23,12 @@
     <main class="container">
         <h1>Detalhes do Ponto Turístico</h1>
 
-        <!-- Exibição dos detalhes do ponto turístico -->
-        <div class="spot-details">
-            <div class="detail-item">
-                <label>Nome:</label>
-                <span th:text="${spot.name}"></span>
-            </div>
-            <div class="detail-item">
-                <label>Descrição:</label>
-                <span th:text="${spot.description}"></span>
-            </div>
-            <div class="detail-item">
-                <label>Localização:</label>
-                <span th:text="${spot.location}"></span>
+        <!-- Card para exibir os detalhes do ponto turístico -->
+        <div class="spot-card">
+            <div class="card-body">
+                <h2 class="card-title" th:text="${spot.name}"></h2>
+                <p class="card-text"><strong>Descrição:</strong> <span th:text="${spot.description}"></span></p>
+                <p class="card-text"><strong>Localização:</strong> <span th:text="${spot.location}"></span></p>
             </div>
         </div>
 
