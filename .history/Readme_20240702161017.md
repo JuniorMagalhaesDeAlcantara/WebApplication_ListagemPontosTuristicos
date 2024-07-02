@@ -1,0 +1,55 @@
+# TouristTracker
+
+O TouristTracker é um projeto Java Spring Boot para cadastro e listagem de pontos turísticos do Brasil.
+
+## Funcionalidades
+
+- Cadastro de novos pontos turísticos com nome, descrição, localização, cidade, estado e data de adição.
+- Listagem de todos os pontos turísticos cadastrados.
+- Visualização detalhada de cada ponto turístico.
+- Busca por nome, descrição ou localização dos pontos turísticos.
+
+## Pré-requisitos
+
+Para executar o projeto localmente, você precisará ter instalado:
+
+- Java Development Kit (JDK) 17
+- Maven
+- Um navegador web moderno
+
+## Como Executar
+
+1. **Clone o repositório:**
+
+   ```bash
+   git clone https://github.com/JuniorMagalhaesDeAlcantara/WebApplication_ListagemPontosTuristicos.git
+
+2. **Navegue até o diretório do projeto:**
+
+cd WebApplication_ListagemPontosTuristicos
+
+3. **Compile o projeto:**
+
+mvn clean package
+
+4. **Execute o projeto:**
+
+java -jar target/tourist-spot-0.0.1-SNAPSHOT.jar
+
+5. **Acesse a aplicação no navegador:**
+
+## Abra seu navegador e vá para http://localhost:8080.
+
+**Tecnologias Utilizadas**
+Java 17
+Spring Boot
+Thymeleaf (para templates HTML)
+H2 Database (em memória)
+Contribuindo
+Contribuições são bem-vindas! Sinta-se à vontade para enviar pull requests ou reportar problemas.
+
+**Autor**
+Desenvolvido por Junior Magalhães de Alcântara.
+
+**Licença**
+Este projeto está licenciado sob a MIT License.
