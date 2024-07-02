@@ -1,0 +1,17 @@
+# fly.toml file generated for TouristSpot application on Fly.io
+
+app = "touristspot"
+
+# Primary region where the app will be deployed
+primary_region = "iad"
+
+# Configuration for the build process
+[build]
+  builder = "paketobuildpacks/builder:base"
+
+# Define environment variables
+[env]
+  SPRING_DATASOURCE_URL = "jdbc:h2:mem:touristspotdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE"
+  SPRING_DATASOURCE_USERNAME = "sa"
+  SPRING_DATASOURCE_PASSWORD = ""
+  SPRING_DATASOURCE_DRIVER_CLASS_NAME = "org.h2.Driver"

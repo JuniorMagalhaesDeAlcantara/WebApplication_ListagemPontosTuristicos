@@ -1,0 +1,6 @@
+com\example\tourist_spot\service\ResourceNotFoundException.class
+com\example\tourist_spot\TouristSpotApplication.class
+com\example\tourist_spot\model\TouristSpot.class
+com\example\tourist_spot\repository\TouristSpotRepository.class
+com\example\tourist_spot\service\TouristSpotService.class
+com\example\tourist_spot\service\controller\TouristSpotController.class

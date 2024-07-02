@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>TouristTracker - Lista de Pontos Turísticos</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/styles.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="/static/images/logo.png" alt="Logo" class="logo">
+                <h2 class="company-name">TouristTracker</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/new">Adicionar Ponto Turístico</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Lista de Pontos Turísticos</h1>
+
+            <form action="/" method="get" class="search-form">
+                <input type="text" name="keyword" placeholder="Buscar...">
+                <button type="submit">Buscar</button>
+            </form>
+
+            <div class="tourist-spots">
+                <div th:each="spot : ${page.content}" class="spot-card">
+                    <h2 th:text="${spot.name}"></h2>
+                    <p th:text="${spot.location}"></p>
+                    <a th:href="@{/view/{id}(id=${spot.id})}" class="details-link">Detalhes</a>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <span th:text="'Página ' + ${page.number + 1} + ' de ' + ${page.totalPages}"></span>
+                <div th:if="${page.hasPrevious()}">
+                    <a th:href="@{/(page=${page.number - 1})}">Anterior</a>
+                </div>
+                <div th:if="${page.hasNext()}">
+                    <a th:href="@{/(page=${page.number + 1})}">Próximo</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 TouristTracker. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

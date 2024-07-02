@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: touristspot
+    env: java
+    plan: free
+    buildCommand: "./mvnw clean package"
+    startCommand: "java -jar target/tourist-spot-0.0.1-SNAPSHOT.jar"
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: "jdbc:h2:mem:touristspotdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE"
+      - key: SPRING_DATASOURCE_USERNAME
+        value: "sa"
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: "password"
+      - key: SPRING_DATASOURCE_DRIVER_CLASS_NAME
+        value: "org.h2.Driver"

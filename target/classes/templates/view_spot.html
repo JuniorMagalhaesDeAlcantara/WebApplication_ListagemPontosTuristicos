@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Detalhes do Ponto Turístico - TouristTracker</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/styles2.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="/static/images/logo.png" alt="Logo" class="logo">
+                <h2 class="company-name">TouristTracker</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Detalhes do Ponto Turístico</h1>
+
+        <!-- Exibição dos detalhes do ponto turístico -->
+        <div class="spot-details">
+            <div class="detail-item">
+                <label>Nome:</label>
+                <span th:text="${spot.name}"></span>
+            </div>
+            <div class="detail-item">
+                <label>Descrição:</label>
+                <span th:text="${spot.description}"></span>
+            </div>
+            <div class="detail-item">
+                <label>Localização:</label>
+                <span th:text="${spot.location}"></span>
+            </div>
+        </div>
+
+        <a href="/" class="back-link">Voltar</a>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 TouristTracker. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
